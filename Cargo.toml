@@ -1,0 +1,6 @@
+[package]
+name = "rusty-base62"
+version = "0.1.0"
+authors = ["Sumin Byeon <suminb@gmail.com>"]
+
+[dependencies]
