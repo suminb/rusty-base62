@@ -18,9 +18,21 @@ fn encode(v: u64) -> String {
     return stack.into_iter().collect();
 }
 
+fn value(c: char) -> Option<usize> {
+    return CHARSET.iter().position(|&x| x == c);
+}
+
 #[cfg(test)]
 #[test]
 fn test_encode() {
     assert!(encode(0) == "0");
     assert!(encode(34441886726) == "base62");
+}
+
+#[test]
+fn test_value() {
+    assert!(value('_') == None);
+    assert!(value('0') == Some(0));
+    assert!(value('A') == Some(10));
+    assert!(value('a') == Some(36));
 }
